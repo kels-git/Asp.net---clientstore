@@ -1,0 +1,29 @@
+﻿@page
+@using System.Data.SqlClient;
+
+@{
+    try
+    {
+        String id = Request.Query["id"];
+        String connectionString = "Data Source=.\\sqlexpress01;Initial Catalog=mystoredb;Integrated Security=True";
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+
+            // Delete the row with the specified ID
+            String deleteSql = "DELETE FROM clients WHERE id=@id";
+            using (SqlCommand deleteCommand = new SqlCommand(deleteSql, connection))
+            {
+                deleteCommand.Parameters.AddWithValue("@id", id);
+                deleteCommand.ExecuteNonQuery();
+            }
+        }
+    }
+    catch (Exception e)
+    {
+        // Handle exceptions here
+    }
+
+    Response.Redirect("/Clients/Index");
+}
