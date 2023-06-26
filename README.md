@@ -1,6 +1,6 @@
 # MyStoreClient
 A simple crud app developed using 
-# ASP.NET, SQL, HTML, Bootstrap, C#
+# ASP.NET, MS SQL SERVER, HTML, Bootstrap, C#
 
 
 ![default_page](https://github.com/kelvin888-cloud/MyStoreClient/assets/83751389/dc0c5484-e29f-4b0d-8999-2aa84e17b845)
